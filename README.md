@@ -1,6 +1,6 @@
 # News App
 
-This Flask app fetches today's latest news from Times of India (TOI) and displays it on the homepage.
+This Flask app fetches today's latest news from Times of India (TOI) and other news sites related to queried topic and displays it on the page.
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ This Flask app fetches today's latest news from Times of India (TOI) and display
 1. Clone the repository to your local machine.
 
     ```bash
-    git clone https://github.com/your-username/news-app.git
+    git clone https://github.com/Khyati-33/news-app.git
     ```
 
 2. Navigate to the project directory.
