@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>TechInd Global</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #e44d26;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .search-form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<head>
+    <title>News Subheader</title>
+    <style>
+        .subheader {
+            background-color: black;
+            color: white;
+            padding: 10 px;
+            text-align: center;
+        }
+        .subheader a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10 px;
+            font-weight: bold;
+        }
+        .subheader a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="subheader">
+        <a href="/bollywood.html">Bollywood</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="politics.html">Politics</a>
+        <a href="india.html">India</a>
+        <a href="international.html">International</a>
+        <a href="https://www.theverge.com">The Verge</a>
+        <!-- Add more topics and corresponding links as needed -->
+    </div>
+</body>
+<body>
+
+<div class="header">
+    TechInd Global
+</div>
+
+<div class="container mt-3">
+    <div class="search-form">
+        <form method="post" class="form-inline">
+            <div class="form-group mr-2">
+                <label for="query" class="sr-only">Search Topic</label>
+                <input type="text" class="form-control" id="query" name="query" placeholder="Enter Topic">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+    <div class="live-info">
+        <p class="text-muted">Live Date and Time: {{ live_date_time }}</p>
+    </div>
+
+    <h3 class="mt-4">Latest Tech News from The Verge</h3>
+    <ul class="list-group">
+        {% for news_item in tech_news %}
+            <li class="list-group-item">
+                <h5>{{ news_item.title }}</h5>
+                <a href="{{ news_item.link }}" target="_blank" class="btn btn-primary">Read More</a>
+            </li>
+        {% endfor %}
+        
+    </ul>
+
+    <h3 class="mt-4">Search Results</h3>
+    <ul class="list-group">
+        {% for article in articles %}
+            <li class="list-group-item">
+                <h5>{{ article.title }}</h5>
+                <a href="{{ article.url }}" target="_blank" class="btn btn-primary">Read More</a>
+            </li>
+        {% endfor %}
+    </ul>
+        {% extends 'base.html' %}
+        {% block content %}
+        <h1>Today's Latest News</h1>
+        <ul>
+            {% for news_item in today_news %}
+            <li>
+                <a href="{{ news_item.link }}" target="_blank">{{ news_item.title }}</a>
+                <span>{{ news_item.time }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
